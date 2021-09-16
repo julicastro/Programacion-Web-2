@@ -9,7 +9,7 @@
         }else if($color === "rojo"){
             $mensaje = "pare";
         }else{
-            $mensaje = "Color incorrecto";
+            $mensaje = "incorrecto";
         }
         echo $mensaje;
     }
