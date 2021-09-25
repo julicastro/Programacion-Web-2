@@ -1,33 +1,32 @@
 <?php
 
-    function sumatoria($numeros = array()){
-        $sumaFor = 0;
-        for ($i=0; $i <= sizeof($numeros); $i++) { 
-            $sumaFor += $numeros[$i];
-
+    function sumatoria_a($numeros)
+    {
+        $total = 0;
+        for ($i = 0; $i < count($numeros); $i++) {
+            $total += $numeros[$i];
         }
-        echo "El resultado usando For es: " . $sumaFor;
-        echo " ";
-
-        $sumaForEach = 0;
-        foreach ($numeros as $key => $i) {
-            $sumaForEach += $i;
-        }
-
-        echo "El resultado usando ForEach es: " . $sumaForEach;
-        echo " ";
-
-        $in = 0;
-        $sumaWhile = 0;
-        
-        while ($in <= sizeof($numeros)) {
-            $sumaWhile += $numeros[$in++];
-   
-        }
-
-        echo "El resultado usando While es: " . $sumaWhile;
-        echo " ";
-
+        echo $total;
     }
 
-?>
+    function sumatoria_b($numeros)
+    {
+        $total = 0;
+        foreach ($numeros as $numero) {
+            $total += $numero;
+        }
+        echo $total;
+    }
+
+    function sumatoria_c($numeros)
+    {
+        $total = $i = 0;
+        while ($i < count($numeros)) {
+            $total += $numeros[$i];
+            $i++;
+        }
+        echo $total;
+    }
+
+
+$numeros = array(1, 2, 3, 4);
