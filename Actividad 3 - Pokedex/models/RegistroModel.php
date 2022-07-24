@@ -2,37 +2,33 @@
 
 class RegistroModel
 {
-    private $database;
-    
-    public function __construct($database){
-        $this->database = $database;
-    }
 
-    function verificarSiLaCuentaExiste($email, $password){
-        $SQL = "SELECT * FROM usuario WHERE usuario = '".$email."' AND clave = '".$password."'";
-        $usuario = $this->database->query($SQL);
-        if($usuario != null){
+    function verificarSiLaCuentaExiste($username, $password){
+		$con = new Conexion();
+		$SQL = $con->ejecutarConsulta("SELECT * FROM usuario WHERE username = '".$username."' AND password = '".$password."'");
+        if($SQL != null){
             return false;
         }
         else{
             return true;
         }
+		$con->cerrarConexion();
     }
 
-    function setUsuario($email,$password,$repitePassword,$rol){
+    function setUsuario($username,$password,$repitePassword,$rol){
+		$con = new Conexion();
         if($password == $repitePassword) {
-            if($this->verificarSiLaCuentaExiste($email,$password)){
-                $SQL = "INSERT INTO `usuario` (`usuario`, `clave`, `rol`) VALUES ('$email','$password','$rol')";
-                $this->database->excecute($SQL);
-
+            if($this->verificarSiLaCuentaExiste($username,$password)){
+                $con->ejecutarActualizacion("INSERT INTO `usuario` (`username`, `password`, `role`) VALUES ('$username','$password','$rol')");
             }else{
-                echo "El mail ya se encuentra registrado.";
+                echo "El Usuario ya se encuentra registrado.";
             }
         }
         else{
             echo "Las contraseñas no coinciden";
             //$_SESSION['errores'] = "Las contraseñas no coinciden";
         }
+		$con->cerrarConexion();
     }
 }
 

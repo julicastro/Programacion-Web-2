@@ -2,7 +2,7 @@
 require_once '../helpers/Conexion.php';
 
 class PokemonDAO {
-    
+
 	public static function listarDatos () {
 		$con = new Conexion();
 		$cont = $con->ejecutarConsulta('SELECT * FROM pokemon');
