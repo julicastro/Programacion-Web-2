@@ -1,6 +1,9 @@
 <?php 
 
+    $color = $_GET [ 'color' ];
+
     function ifElse($color){    
+
         $mensaje = "";
         if($color === "verde"){
             $mensaje = "avance";

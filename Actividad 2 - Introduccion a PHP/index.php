@@ -39,6 +39,12 @@ include_once('Ejercicio06/ejercicio06.php');
                     b) Resuelva la solución utilizando if inline (return ?: )
                     c) Resuelva la solución utilizando switch
                 </p>
+
+                <form action="Ejercicio01/ejercicio01.php" method="GET">
+                    Color: <input type="text" name="color" />
+                    <input type="submit" name="submit" />
+                </form>
+
                 <div class="ejercicio-contenedor">
                     <div>
                         <p>
@@ -146,27 +152,27 @@ include_once('Ejercicio06/ejercicio06.php');
                     c) Resuelva la solución utilizando la estructura de control while</p>
                 <div class="ejercicio-contenedor">
                     <div>
-                    <p>
-                        <?php
-                        $sumar = array(1, 1, 1, 1, 2);
-                        sumatoria_a($sumar);
-                        ?>
+                        <p>
+                            <?php
+                            $sumar = array(1, 1, 1, 1, 2);
+                            sumatoria_a($sumar);
+                            ?>
                         </p>
                     </div>
                     <div>
-                    <p>
-                        <?php
-                        $sumar = array(1, 1, 1, 1, 2);
-                        sumatoria_b($sumar);
-                        ?>
+                        <p>
+                            <?php
+                            $sumar = array(1, 1, 1, 1, 2);
+                            sumatoria_b($sumar);
+                            ?>
                         </p>
                     </div>
                     <div>
-                    <p>
-                        <?php
-                        $sumar = array(1, 1, 1, 1, 2);
-                        sumatoria_c($sumar);
-                        ?>
+                        <p>
+                            <?php
+                            $sumar = array(1, 1, 1, 1, 2);
+                            sumatoria_c($sumar);
+                            ?>
                         </p>
                     </div>
                 </div>
@@ -183,11 +189,11 @@ include_once('Ejercicio06/ejercicio06.php');
                 </p>
                 <div class="ejercicio-contenedor">
                     <div>
-                    <p>
-                        <?php
-                        saludoFormal("Juan", "Carlos", "m");
-                        saludoInformal("Juan");
-                        ?>
+                        <p>
+                            <?php
+                            saludoFormal("Juan", "Carlos", "m");
+                            saludoInformal("Juan");
+                            ?>
                         </p>
                     </div>
                 </div>
