@@ -1,7 +1,7 @@
 <?php
 require_once '../helpers/Conexion.php';
 
-class PokemonDAO {
+class PokedexModel {
 
 	public static function listarDatos () {
 		$con = new Conexion();
@@ -35,7 +35,7 @@ class PokemonDAO {
 		$con->cerrarConexion();
 	}
 //Lista los pokemons por lo que se pasa en buscador
-	public static function listarDatosFiltrado ($q) {
+	public static function listarDatosFiltrados ($q) {
 		$con = new Conexion();
 		$cont = $con->ejecutarConsulta("SELECT * FROM pokemon WHERE (Id LIKE '%$q%' OR nombre LIKE '%$q%' OR tipo LIKE '%$q%' OR numero LIKE '%$q%')");
 		$con->cerrarConexion();
